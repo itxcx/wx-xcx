@@ -1,7 +1,7 @@
 /**
  * App 微信配置文件app.js
  * author: nujey
- * versions: 1.0.0
+ * versions: 1.0.1
  */
 App({
   /**
@@ -54,6 +54,9 @@ App({
             }) 
           }
         },
+        fail: (error) => {
+          reject(error)
+        }
       })
     })
   }
@@ -71,6 +74,8 @@ page({
     }
     app.ajax(params).then((result) => {
       // 处理数据
+    }).catch(error => {
+      // 回调出错的时候
     })
   }
 })
